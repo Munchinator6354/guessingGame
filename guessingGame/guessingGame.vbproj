@@ -119,5 +119,17 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Images\Blue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Images\Yellow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Images\Green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Images\Red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

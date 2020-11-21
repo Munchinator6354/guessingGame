@@ -22,143 +22,419 @@ Partial Class frmGuessingGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGuessingGame))
+        Me.lblID = New System.Windows.Forms.Label()
+        Me.lnkGitHub = New System.Windows.Forms.LinkLabel()
         Me.grpColorGame = New System.Windows.Forms.GroupBox()
-        Me.picColor1 = New System.Windows.Forms.PictureBox()
-        Me.picColor2 = New System.Windows.Forms.PictureBox()
-        Me.picColor3 = New System.Windows.Forms.PictureBox()
-        Me.picColor4 = New System.Windows.Forms.PictureBox()
-        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.btnGreen = New System.Windows.Forms.Button()
+        Me.btnYellow = New System.Windows.Forms.Button()
+        Me.btnBlue = New System.Windows.Forms.Button()
+        Me.btnRed = New System.Windows.Forms.Button()
         Me.lblColorInstructions = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
+        Me.lblColorNumber = New System.Windows.Forms.Label()
+        Me.lblNumberNumber = New System.Windows.Forms.Label()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.grpNumGuess = New System.Windows.Forms.GroupBox()
+        Me.btnGuess = New System.Windows.Forms.Button()
+        Me.lblNumHintOutput = New System.Windows.Forms.Label()
+        Me.txtNumGuess = New System.Windows.Forms.TextBox()
+        Me.lblNumGameInstructions = New System.Windows.Forms.Label()
+        Me.grpScores = New System.Windows.Forms.GroupBox()
+        Me.btnProceed = New System.Windows.Forms.Button()
+        Me.radNo = New System.Windows.Forms.RadioButton()
+        Me.radYes = New System.Windows.Forms.RadioButton()
+        Me.lblScores = New System.Windows.Forms.Label()
+        Me.btnRestart = New System.Windows.Forms.Button()
+        Me.lblColorCountLabel = New System.Windows.Forms.Label()
+        Me.lblColorCount = New System.Windows.Forms.Label()
+        Me.lblNumCountLabel = New System.Windows.Forms.Label()
+        Me.lblNumCount = New System.Windows.Forms.Label()
+        Me.lblTotalCountLabel = New System.Windows.Forms.Label()
+        Me.lblTotalCount = New System.Windows.Forms.Label()
+        Me.lblYourLastGuess = New System.Windows.Forms.Label()
+        Me.lblCheatCodes = New System.Windows.Forms.Label()
         Me.grpColorGame.SuspendLayout()
-        CType(Me.picColor1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picColor2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picColor3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picColor4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpNumGuess.SuspendLayout()
+        Me.grpScores.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblID
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(1, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(187, 51)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Programmer: Ryan Isaacson" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CS115 - Fall 2020" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lab#2 Guessing Game"
+        Me.lblID.AutoSize = True
+        Me.lblID.Location = New System.Drawing.Point(1, 3)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(187, 51)
+        Me.lblID.TabIndex = 0
+        Me.lblID.Text = "Programmer: Ryan Isaacson" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CS115 - Fall 2020" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lab#2 Guessing Game"
         '
-        'LinkLabel1
+        'lnkGitHub
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(185, 3)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(129, 17)
-        Me.LinkLabel1.TabIndex = 1
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "(Here's my GitHub)"
+        Me.lnkGitHub.AutoSize = True
+        Me.lnkGitHub.Location = New System.Drawing.Point(185, 3)
+        Me.lnkGitHub.Name = "lnkGitHub"
+        Me.lnkGitHub.Size = New System.Drawing.Size(129, 17)
+        Me.lnkGitHub.TabIndex = 1
+        Me.lnkGitHub.TabStop = True
+        Me.lnkGitHub.Text = "(Here's my GitHub)"
         '
         'grpColorGame
         '
+        Me.grpColorGame.Controls.Add(Me.btnGreen)
+        Me.grpColorGame.Controls.Add(Me.btnYellow)
+        Me.grpColorGame.Controls.Add(Me.btnBlue)
+        Me.grpColorGame.Controls.Add(Me.btnRed)
         Me.grpColorGame.Controls.Add(Me.lblColorInstructions)
-        Me.grpColorGame.Controls.Add(Me.picColor4)
-        Me.grpColorGame.Controls.Add(Me.picColor3)
-        Me.grpColorGame.Controls.Add(Me.picColor2)
-        Me.grpColorGame.Controls.Add(Me.picColor1)
-        Me.grpColorGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpColorGame.Location = New System.Drawing.Point(96, 100)
+        Me.grpColorGame.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpColorGame.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.grpColorGame.Location = New System.Drawing.Point(106, 75)
         Me.grpColorGame.Name = "grpColorGame"
-        Me.grpColorGame.Size = New System.Drawing.Size(560, 145)
-        Me.grpColorGame.TabIndex = 2
+        Me.grpColorGame.Size = New System.Drawing.Size(554, 127)
+        Me.grpColorGame.TabIndex = 6
         Me.grpColorGame.TabStop = False
+        Me.grpColorGame.Text = "Color Guess Game"
         Me.grpColorGame.UseCompatibleTextRendering = True
         '
-        'picColor1
+        'btnGreen
         '
-        Me.picColor1.BackColor = System.Drawing.Color.Red
-        Me.picColor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picColor1.Location = New System.Drawing.Point(36, 61)
-        Me.picColor1.Name = "picColor1"
-        Me.picColor1.Size = New System.Drawing.Size(106, 65)
-        Me.picColor1.TabIndex = 0
-        Me.picColor1.TabStop = False
+        Me.btnGreen.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnGreen.Image = Global.guessingGame.My.Resources.Resources.Green
+        Me.btnGreen.Location = New System.Drawing.Point(167, 46)
+        Me.btnGreen.Name = "btnGreen"
+        Me.btnGreen.Size = New System.Drawing.Size(104, 70)
+        Me.btnGreen.TabIndex = 2
+        Me.btnGreen.Text = "Green"
+        Me.btnGreen.UseVisualStyleBackColor = True
         '
-        'picColor2
+        'btnYellow
         '
-        Me.picColor2.BackColor = System.Drawing.Color.Blue
-        Me.picColor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picColor2.Location = New System.Drawing.Point(161, 61)
-        Me.picColor2.Name = "picColor2"
-        Me.picColor2.Size = New System.Drawing.Size(106, 65)
-        Me.picColor2.TabIndex = 1
-        Me.picColor2.TabStop = False
+        Me.btnYellow.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnYellow.Image = Global.guessingGame.My.Resources.Resources.Yellow
+        Me.btnYellow.Location = New System.Drawing.Point(387, 46)
+        Me.btnYellow.Name = "btnYellow"
+        Me.btnYellow.Size = New System.Drawing.Size(104, 70)
+        Me.btnYellow.TabIndex = 4
+        Me.btnYellow.Text = "Yellow"
+        Me.btnYellow.UseVisualStyleBackColor = True
         '
-        'picColor3
+        'btnBlue
         '
-        Me.picColor3.BackColor = System.Drawing.Color.Green
-        Me.picColor3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picColor3.Location = New System.Drawing.Point(287, 61)
-        Me.picColor3.Name = "picColor3"
-        Me.picColor3.Size = New System.Drawing.Size(106, 65)
-        Me.picColor3.TabIndex = 2
-        Me.picColor3.TabStop = False
+        Me.btnBlue.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnBlue.Image = Global.guessingGame.My.Resources.Resources.Blue
+        Me.btnBlue.Location = New System.Drawing.Point(277, 46)
+        Me.btnBlue.Name = "btnBlue"
+        Me.btnBlue.Size = New System.Drawing.Size(104, 70)
+        Me.btnBlue.TabIndex = 3
+        Me.btnBlue.Text = "Blue"
+        Me.btnBlue.UseVisualStyleBackColor = True
         '
-        'picColor4
+        'btnRed
         '
-        Me.picColor4.BackColor = System.Drawing.Color.Yellow
-        Me.picColor4.Location = New System.Drawing.Point(412, 61)
-        Me.picColor4.Name = "picColor4"
-        Me.picColor4.Size = New System.Drawing.Size(106, 65)
-        Me.picColor4.TabIndex = 3
-        Me.picColor4.TabStop = False
-        '
-        'lblTitle
-        '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.Location = New System.Drawing.Point(250, 49)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(262, 39)
-        Me.lblTitle.TabIndex = 3
-        Me.lblTitle.Text = "Guessing Game"
+        Me.btnRed.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnRed.Image = CType(resources.GetObject("btnRed.Image"), System.Drawing.Image)
+        Me.btnRed.Location = New System.Drawing.Point(57, 46)
+        Me.btnRed.Name = "btnRed"
+        Me.btnRed.Size = New System.Drawing.Size(104, 70)
+        Me.btnRed.TabIndex = 1
+        Me.btnRed.Text = "Red"
+        Me.btnRed.UseVisualStyleBackColor = True
         '
         'lblColorInstructions
         '
         Me.lblColorInstructions.AutoSize = True
-        Me.lblColorInstructions.Location = New System.Drawing.Point(69, 23)
+        Me.lblColorInstructions.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblColorInstructions.Location = New System.Drawing.Point(88, 23)
         Me.lblColorInstructions.Name = "lblColorInstructions"
-        Me.lblColorInstructions.Size = New System.Drawing.Size(402, 20)
-        Me.lblColorInstructions.TabIndex = 4
+        Me.lblColorInstructions.Size = New System.Drawing.Size(341, 17)
+        Me.lblColorInstructions.TabIndex = 0
         Me.lblColorInstructions.Text = "Only 1 color will lead to the number guessing game..."
+        '
+        'lblTitle
+        '
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(249, 33)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(254, 38)
+        Me.lblTitle.TabIndex = 2
+        Me.lblTitle.Text = "Guessing Game"
+        '
+        'lblColorNumber
+        '
+        Me.lblColorNumber.AutoSize = True
+        Me.lblColorNumber.Location = New System.Drawing.Point(657, 26)
+        Me.lblColorNumber.Name = "lblColorNumber"
+        Me.lblColorNumber.Size = New System.Drawing.Size(95, 17)
+        Me.lblColorNumber.TabIndex = 4
+        Me.lblColorNumber.Text = "Color Number"
+        '
+        'lblNumberNumber
+        '
+        Me.lblNumberNumber.AutoSize = True
+        Me.lblNumberNumber.Location = New System.Drawing.Point(691, 26)
+        Me.lblNumberNumber.Name = "lblNumberNumber"
+        Me.lblNumberNumber.Size = New System.Drawing.Size(112, 17)
+        Me.lblNumberNumber.TabIndex = 5
+        Me.lblNumberNumber.Text = "Number Number"
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(594, 381)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(149, 57)
+        Me.btnExit.TabIndex = 16
+        Me.btnExit.Text = "Exit" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Program"
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
+        'grpNumGuess
+        '
+        Me.grpNumGuess.Controls.Add(Me.lblYourLastGuess)
+        Me.grpNumGuess.Controls.Add(Me.btnGuess)
+        Me.grpNumGuess.Controls.Add(Me.lblNumHintOutput)
+        Me.grpNumGuess.Controls.Add(Me.txtNumGuess)
+        Me.grpNumGuess.Controls.Add(Me.lblNumGameInstructions)
+        Me.grpNumGuess.Location = New System.Drawing.Point(31, 208)
+        Me.grpNumGuess.Name = "grpNumGuess"
+        Me.grpNumGuess.Size = New System.Drawing.Size(360, 178)
+        Me.grpNumGuess.TabIndex = 7
+        Me.grpNumGuess.TabStop = False
+        Me.grpNumGuess.Text = "Number Guess Game"
+        '
+        'btnGuess
+        '
+        Me.btnGuess.Location = New System.Drawing.Point(213, 130)
+        Me.btnGuess.Name = "btnGuess"
+        Me.btnGuess.Size = New System.Drawing.Size(96, 28)
+        Me.btnGuess.TabIndex = 4
+        Me.btnGuess.Text = "Guess!"
+        Me.btnGuess.UseVisualStyleBackColor = True
+        '
+        'lblNumHintOutput
+        '
+        Me.lblNumHintOutput.AutoSize = True
+        Me.lblNumHintOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumHintOutput.Location = New System.Drawing.Point(30, 144)
+        Me.lblNumHintOutput.Name = "lblNumHintOutput"
+        Me.lblNumHintOutput.Size = New System.Drawing.Size(0, 17)
+        Me.lblNumHintOutput.TabIndex = 3
+        '
+        'txtNumGuess
+        '
+        Me.txtNumGuess.Location = New System.Drawing.Point(109, 88)
+        Me.txtNumGuess.Name = "txtNumGuess"
+        Me.txtNumGuess.Size = New System.Drawing.Size(114, 22)
+        Me.txtNumGuess.TabIndex = 1
+        '
+        'lblNumGameInstructions
+        '
+        Me.lblNumGameInstructions.AutoSize = True
+        Me.lblNumGameInstructions.Location = New System.Drawing.Point(54, 41)
+        Me.lblNumGameInstructions.Name = "lblNumGameInstructions"
+        Me.lblNumGameInstructions.Size = New System.Drawing.Size(229, 34)
+        Me.lblNumGameInstructions.TabIndex = 0
+        Me.lblNumGameInstructions.Text = "Can you guess the secret number?" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enter a number from 1-100"
+        '
+        'grpScores
+        '
+        Me.grpScores.Controls.Add(Me.btnProceed)
+        Me.grpScores.Controls.Add(Me.radNo)
+        Me.grpScores.Controls.Add(Me.radYes)
+        Me.grpScores.Controls.Add(Me.lblScores)
+        Me.grpScores.Location = New System.Drawing.Point(405, 208)
+        Me.grpScores.Name = "grpScores"
+        Me.grpScores.Size = New System.Drawing.Size(356, 167)
+        Me.grpScores.TabIndex = 8
+        Me.grpScores.TabStop = False
+        Me.grpScores.Text = "Scores"
+        '
+        'btnProceed
+        '
+        Me.btnProceed.Location = New System.Drawing.Point(114, 138)
+        Me.btnProceed.Name = "btnProceed"
+        Me.btnProceed.Size = New System.Drawing.Size(78, 23)
+        Me.btnProceed.TabIndex = 3
+        Me.btnProceed.Text = "Proceed"
+        Me.btnProceed.UseVisualStyleBackColor = True
+        '
+        'radNo
+        '
+        Me.radNo.AutoSize = True
+        Me.radNo.Location = New System.Drawing.Point(170, 112)
+        Me.radNo.Name = "radNo"
+        Me.radNo.Size = New System.Drawing.Size(110, 21)
+        Me.radNo.TabIndex = 2
+        Me.radNo.TabStop = True
+        Me.radNo.Text = "I guess not..."
+        Me.radNo.UseVisualStyleBackColor = True
+        '
+        'radYes
+        '
+        Me.radYes.AutoSize = True
+        Me.radYes.Location = New System.Drawing.Point(68, 113)
+        Me.radYes.Name = "radYes"
+        Me.radYes.Size = New System.Drawing.Size(96, 21)
+        Me.radYes.TabIndex = 1
+        Me.radYes.TabStop = True
+        Me.radYes.Text = "I guess so!"
+        Me.radYes.UseVisualStyleBackColor = True
+        '
+        'lblScores
+        '
+        Me.lblScores.AutoSize = True
+        Me.lblScores.Location = New System.Drawing.Point(25, 25)
+        Me.lblScores.Name = "lblScores"
+        Me.lblScores.Size = New System.Drawing.Size(296, 85)
+        Me.lblScores.TabIndex = 0
+        Me.lblScores.Text = "Your number of INSERT is correct!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You guessed the color in INSERT guesses!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You " &
+    "guessed the number in INSERT guesses!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Would you like to play again?"
+        '
+        'btnRestart
+        '
+        Me.btnRestart.Location = New System.Drawing.Point(425, 381)
+        Me.btnRestart.Name = "btnRestart"
+        Me.btnRestart.Size = New System.Drawing.Size(144, 57)
+        Me.btnRestart.TabIndex = 15
+        Me.btnRestart.Text = "Restart" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Program"
+        Me.btnRestart.UseVisualStyleBackColor = True
+        '
+        'lblColorCountLabel
+        '
+        Me.lblColorCountLabel.AutoSize = True
+        Me.lblColorCountLabel.Location = New System.Drawing.Point(1, 389)
+        Me.lblColorCountLabel.Name = "lblColorCountLabel"
+        Me.lblColorCountLabel.Size = New System.Drawing.Size(131, 17)
+        Me.lblColorCountLabel.TabIndex = 9
+        Me.lblColorCountLabel.Text = "Color Guess Count:"
+        '
+        'lblColorCount
+        '
+        Me.lblColorCount.AutoSize = True
+        Me.lblColorCount.Location = New System.Drawing.Point(61, 413)
+        Me.lblColorCount.Name = "lblColorCount"
+        Me.lblColorCount.Size = New System.Drawing.Size(16, 17)
+        Me.lblColorCount.TabIndex = 12
+        Me.lblColorCount.Text = "0"
+        '
+        'lblNumCountLabel
+        '
+        Me.lblNumCountLabel.AutoSize = True
+        Me.lblNumCountLabel.Location = New System.Drawing.Point(137, 389)
+        Me.lblNumCountLabel.Name = "lblNumCountLabel"
+        Me.lblNumCountLabel.Size = New System.Drawing.Size(148, 17)
+        Me.lblNumCountLabel.TabIndex = 10
+        Me.lblNumCountLabel.Text = "Number Guess Count:"
+        '
+        'lblNumCount
+        '
+        Me.lblNumCount.AutoSize = True
+        Me.lblNumCount.Location = New System.Drawing.Point(194, 413)
+        Me.lblNumCount.Name = "lblNumCount"
+        Me.lblNumCount.Size = New System.Drawing.Size(16, 17)
+        Me.lblNumCount.TabIndex = 13
+        Me.lblNumCount.Text = "0"
+        '
+        'lblTotalCountLabel
+        '
+        Me.lblTotalCountLabel.AutoSize = True
+        Me.lblTotalCountLabel.Location = New System.Drawing.Point(289, 389)
+        Me.lblTotalCountLabel.Name = "lblTotalCountLabel"
+        Me.lblTotalCountLabel.Size = New System.Drawing.Size(130, 17)
+        Me.lblTotalCountLabel.TabIndex = 11
+        Me.lblTotalCountLabel.Text = "Total Guess Count:"
+        '
+        'lblTotalCount
+        '
+        Me.lblTotalCount.AutoSize = True
+        Me.lblTotalCount.BackColor = System.Drawing.SystemColors.Control
+        Me.lblTotalCount.Location = New System.Drawing.Point(342, 413)
+        Me.lblTotalCount.Name = "lblTotalCount"
+        Me.lblTotalCount.Size = New System.Drawing.Size(16, 17)
+        Me.lblTotalCount.TabIndex = 14
+        Me.lblTotalCount.Text = "0"
+        '
+        'lblYourLastGuess
+        '
+        Me.lblYourLastGuess.AutoSize = True
+        Me.lblYourLastGuess.Location = New System.Drawing.Point(39, 117)
+        Me.lblYourLastGuess.Name = "lblYourLastGuess"
+        Me.lblYourLastGuess.Size = New System.Drawing.Size(118, 17)
+        Me.lblYourLastGuess.TabIndex = 2
+        Me.lblYourLastGuess.Text = "Your Last Guess:"
+        '
+        'lblCheatCodes
+        '
+        Me.lblCheatCodes.AutoSize = True
+        Me.lblCheatCodes.Location = New System.Drawing.Point(509, 26)
+        Me.lblCheatCodes.Name = "lblCheatCodes"
+        Me.lblCheatCodes.Size = New System.Drawing.Size(128, 17)
+        Me.lblCheatCodes.TabIndex = 3
+        Me.lblCheatCodes.Text = "Cheat Codes Here:"
         '
         'frmGuessingGame
         '
+        Me.AcceptButton = Me.btnGuess
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblCheatCodes)
+        Me.Controls.Add(Me.lblTotalCount)
+        Me.Controls.Add(Me.lblTotalCountLabel)
+        Me.Controls.Add(Me.lblNumCount)
+        Me.Controls.Add(Me.lblNumCountLabel)
+        Me.Controls.Add(Me.lblColorCount)
+        Me.Controls.Add(Me.lblColorCountLabel)
+        Me.Controls.Add(Me.btnRestart)
+        Me.Controls.Add(Me.grpScores)
+        Me.Controls.Add(Me.grpNumGuess)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.lblNumberNumber)
+        Me.Controls.Add(Me.lblColorNumber)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.grpColorGame)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lnkGitHub)
+        Me.Controls.Add(Me.lblID)
         Me.Name = "frmGuessingGame"
         Me.Text = "Guessing Game"
         Me.grpColorGame.ResumeLayout(False)
         Me.grpColorGame.PerformLayout()
-        CType(Me.picColor1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picColor2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picColor3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picColor4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpNumGuess.ResumeLayout(False)
+        Me.grpNumGuess.PerformLayout()
+        Me.grpScores.ResumeLayout(False)
+        Me.grpScores.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents lblID As Label
+    Friend WithEvents lnkGitHub As LinkLabel
     Friend WithEvents grpColorGame As GroupBox
-    Friend WithEvents picColor4 As PictureBox
-    Friend WithEvents picColor3 As PictureBox
-    Friend WithEvents picColor2 As PictureBox
-    Friend WithEvents picColor1 As PictureBox
     Friend WithEvents lblTitle As Label
     Friend WithEvents lblColorInstructions As Label
+    Friend WithEvents btnGreen As Button
+    Friend WithEvents btnYellow As Button
+    Friend WithEvents btnBlue As Button
+    Friend WithEvents btnRed As Button
+    Friend WithEvents lblColorNumber As Label
+    Friend WithEvents lblNumberNumber As Label
+    Friend WithEvents btnExit As Button
+    Friend WithEvents grpNumGuess As GroupBox
+    Friend WithEvents lblNumHintOutput As Label
+    Friend WithEvents txtNumGuess As TextBox
+    Friend WithEvents lblNumGameInstructions As Label
+    Friend WithEvents btnGuess As Button
+    Friend WithEvents grpScores As GroupBox
+    Friend WithEvents lblScores As Label
+    Friend WithEvents btnRestart As Button
+    Friend WithEvents radNo As RadioButton
+    Friend WithEvents radYes As RadioButton
+    Friend WithEvents btnProceed As Button
+    Friend WithEvents lblColorCountLabel As Label
+    Friend WithEvents lblColorCount As Label
+    Friend WithEvents lblNumCountLabel As Label
+    Friend WithEvents lblNumCount As Label
+    Friend WithEvents lblTotalCountLabel As Label
+    Friend WithEvents lblTotalCount As Label
+    Friend WithEvents lblYourLastGuess As Label
+    Friend WithEvents lblCheatCodes As Label
 End Class
