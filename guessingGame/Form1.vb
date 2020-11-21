@@ -10,6 +10,7 @@ Option Strict On
 '               Each guess will count And the lower the score, the better. Try it out!
 
 Public Class frmGuessingGame
+    'Here we initialize our lovely variables
     Dim rand As New Random
     Dim intRandColor As Integer
     Dim intRandNum As Integer
@@ -28,6 +29,7 @@ Public Class frmGuessingGame
     'Date:          November 20, 2020
     'Description    Initialized game when the form loads
     Private Sub frmGuessingGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Begin the Color Game
         Call InitializeGame()
     End Sub
     '-----------------------------------------------------------------------------------------------
@@ -46,6 +48,7 @@ Public Class frmGuessingGame
         If intRed = intRandColor Then
             StartNumberGuess()
         Else
+            'Otherwise output a message box saying the user was wrong with their guess
             MsgBox("Looks like that was NOT the right color...")
         End If
     End Sub
@@ -63,6 +66,7 @@ Public Class frmGuessingGame
         If intBlue = intRandColor Then
             StartNumberGuess()
         Else
+            'Otherwise output a message box saying the user was wrong with their guess
             MsgBox("Looks like that was NOT the right color...")
         End If
     End Sub
@@ -80,6 +84,7 @@ Public Class frmGuessingGame
         If intGreen = intRandColor Then
             StartNumberGuess()
         Else
+            'Otherwise output a message box saying the user was wrong with their guess
             MsgBox("Looks like that was NOT the right color...")
         End If
     End Sub
@@ -97,6 +102,7 @@ Public Class frmGuessingGame
         If intYellow = intRandColor Then
             StartNumberGuess()
         Else
+            'Otherwise output a message box saying the user was wrong with their guess
             MsgBox("Looks like that was NOT the right color...")
         End If
     End Sub
@@ -184,16 +190,20 @@ Public Class frmGuessingGame
     'Date:          November 20, 2020
     'Description    Checks user input validation, then compates input number to actual secret number and displays hints as well as what the user last guessed.
     Private Sub btnGuess_Click(sender As Object, e As EventArgs) Handles btnGuess.Click
+        'Initializes a new varible to store the last number guessed
         Dim intLastNumberGuessed As Integer
+        'Focus' on the guess TextBox
         txtNumGuess.Focus()
         'Checks if the user leaves the number guess text box blank, if blank, outputs message asking for a guess
         If txtNumGuess.Text = "" Then
             MsgBox("Surely you'd like to make a guess?")
             'Checks if the number guess is a valid integer from 0-100
         ElseIf IsNumeric(txtNumGuess.Text) And CInt(txtNumGuess.Text) >= 0 And CInt(txtNumGuess.Text) <= 100 Then
+            'This stores the string the user input into a variable
             intLastNumberGuessed = CInt(txtNumGuess.Text)
+            'This will clear the TextBox again
             txtNumGuess.Text = ""
-            'Display what the user's last guess was
+            'Displays what the user's last guess was
             lblYourLastGuess.Text = "Your Last Guess: " & CStr(intLastNumberGuessed)
             'Increase Number Guess Count
             intNumCount = intNumCount + 1
@@ -224,6 +234,7 @@ Public Class frmGuessingGame
             End If
             'If user did not input valid integer from 0-100, displays Message Box asking for valid input
         Else
+            'Tells the user they didn't put in a valid integer
             MsgBox("Input must be a valid integer from 0-100")
         End If
     End Sub
@@ -233,6 +244,7 @@ Public Class frmGuessingGame
     'Date:          November 20, 2020
     'Description    Allows the user to choose between 2 radio buttons and select if they'd like to replay the game or close the program upon button click.
     Private Sub btnProceed_Click(sender As Object, e As EventArgs) Handles btnProceed.Click
+        'Checks which radio button is checked and determines to either restart the game or exit the program
         If radYes.Checked Then
             InitializeGame()
         ElseIf radNo.Checked Then
@@ -247,6 +259,7 @@ Public Class frmGuessingGame
     'Date:          November 20, 2020
     'Description    Resets the program back to the beginning
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
+        'Calls the InitializeGame subroutine to restart the game
         InitializeGame()
     End Sub
 

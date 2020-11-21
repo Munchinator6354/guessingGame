@@ -36,6 +36,7 @@ Partial Class frmGuessingGame
         Me.lblNumberNumber = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.grpNumGuess = New System.Windows.Forms.GroupBox()
+        Me.lblYourLastGuess = New System.Windows.Forms.Label()
         Me.btnGuess = New System.Windows.Forms.Button()
         Me.lblNumHintOutput = New System.Windows.Forms.Label()
         Me.txtNumGuess = New System.Windows.Forms.TextBox()
@@ -52,7 +53,6 @@ Partial Class frmGuessingGame
         Me.lblNumCount = New System.Windows.Forms.Label()
         Me.lblTotalCountLabel = New System.Windows.Forms.Label()
         Me.lblTotalCount = New System.Windows.Forms.Label()
-        Me.lblYourLastGuess = New System.Windows.Forms.Label()
         Me.lblCheatCodes = New System.Windows.Forms.Label()
         Me.grpColorGame.SuspendLayout()
         Me.grpNumGuess.SuspendLayout()
@@ -199,6 +199,15 @@ Partial Class frmGuessingGame
         Me.grpNumGuess.TabIndex = 7
         Me.grpNumGuess.TabStop = False
         Me.grpNumGuess.Text = "Number Guess Game"
+        '
+        'lblYourLastGuess
+        '
+        Me.lblYourLastGuess.AutoSize = True
+        Me.lblYourLastGuess.Location = New System.Drawing.Point(39, 117)
+        Me.lblYourLastGuess.Name = "lblYourLastGuess"
+        Me.lblYourLastGuess.Size = New System.Drawing.Size(118, 17)
+        Me.lblYourLastGuess.TabIndex = 2
+        Me.lblYourLastGuess.Text = "Your Last Guess:"
         '
         'btnGuess
         '
@@ -352,23 +361,14 @@ Partial Class frmGuessingGame
         Me.lblTotalCount.TabIndex = 14
         Me.lblTotalCount.Text = "0"
         '
-        'lblYourLastGuess
-        '
-        Me.lblYourLastGuess.AutoSize = True
-        Me.lblYourLastGuess.Location = New System.Drawing.Point(39, 117)
-        Me.lblYourLastGuess.Name = "lblYourLastGuess"
-        Me.lblYourLastGuess.Size = New System.Drawing.Size(118, 17)
-        Me.lblYourLastGuess.TabIndex = 2
-        Me.lblYourLastGuess.Text = "Your Last Guess:"
-        '
         'lblCheatCodes
         '
         Me.lblCheatCodes.AutoSize = True
-        Me.lblCheatCodes.Location = New System.Drawing.Point(509, 26)
+        Me.lblCheatCodes.Location = New System.Drawing.Point(454, 26)
         Me.lblCheatCodes.Name = "lblCheatCodes"
-        Me.lblCheatCodes.Size = New System.Drawing.Size(128, 17)
+        Me.lblCheatCodes.Size = New System.Drawing.Size(197, 17)
         Me.lblCheatCodes.TabIndex = 3
-        Me.lblCheatCodes.Text = "Cheat Codes Here:"
+        Me.lblCheatCodes.Text = "Cheat Codes For Penny Here:"
         '
         'frmGuessingGame
         '
