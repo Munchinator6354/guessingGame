@@ -110,14 +110,6 @@ Public Class frmGuessingGame
     '-----------------------------------------------------------------------------------------------
     'Other Functions & Subroutines
     '-----------------------------------------------------------------------------------------------
-    'Subroutine:    lnkGitHub_LinkClicked
-    'Programmer:    Ryan Isaacson / Munchinator6354
-    'Date:          November 20, 2020
-    'Description    Takes the user to my spiffy GitHub
-    Private Sub lnkGitHub_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkGitHub.LinkClicked
-        Process.Start("https://github.com/Munchinator6354")
-    End Sub
-
     'Subroutine:    InitializeGame()
     'Programmer:    Ryan Isaacson / Munchinator6354
     'Date:          November 20, 2020
@@ -218,7 +210,7 @@ Public Class frmGuessingGame
                 MsgBox("Congratulations, You Won" & vbCrLf & "Your Total Guess Count was  " & lblTotalCount.Text & "!")
                 'Determines output for number guess more than 7 higher than the hidden number
             ElseIf intLastNumberGuessed > intRandNum And Math.Abs(intRandNum - intLastNumberGuessed) > 7 Then
-                lblNumHintOutput.Text = "You guessed too high"
+                lblNumHintOutput.Text = "You guessed much too high"
 
                 'Determines output for number guess 7 or less higher than the hidden number
             ElseIf intLastNumberGuessed > intRandNum And intRandNum - intLastNumberGuessed <= 7 Then
@@ -230,7 +222,7 @@ Public Class frmGuessingGame
 
                 'Determines output for number guess more than 7 lower than the hidden number
             ElseIf intLastNumberGuessed < intRandNum Then
-                lblNumHintOutput.Text = "You guessed too low"
+                lblNumHintOutput.Text = "You guessed much too low"
             End If
             'If user did not input valid integer from 0-100, displays Message Box asking for valid input
         Else
@@ -248,6 +240,7 @@ Public Class frmGuessingGame
         If radYes.Checked Then
             InitializeGame()
         ElseIf radNo.Checked Then
+            MsgBox("Thanks for playing!")
             Close()
         Else
             MsgBox("I would advise selecting one of the 2 radio button options ; )")
@@ -268,6 +261,15 @@ Public Class frmGuessingGame
     'Date:          November 20, 2020
     'Description    Exits the Program
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        MsgBox("Thanks for playing!")
         Close()
+    End Sub
+
+    'Subroutine:    lnkGitHub_LinkClicked
+    'Programmer:    Ryan Isaacson / Munchinator6354
+    'Date:          November 20, 2020
+    'Description    Takes the user to my spiffy GitHub
+    Private Sub lnkGitHub_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkGitHub.LinkClicked
+        Process.Start("https://github.com/Munchinator6354")
     End Sub
 End Class
